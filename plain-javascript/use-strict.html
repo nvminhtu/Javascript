@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tet</title>
+</head>
+<body>
+	<h1>Use Strict</h1>
+	<p>The following code causes a syntax error because in strict mode all variables must be declared with var.</p>
+	<pre>
+		<code>	"use strict";
+		function testFunction(){
+			var testVar = 4;
+			return testVar;
+		}
+		intvar = testFunction();</code>
+	</pre>
+	<script>
+		"use strict";
+		function testFunction(){
+			var testVar = 4;
+			return testVar;
+		}
+		intvar = testFunction();
+	</script>
+	<p>The following code causes a syntax error because in strict mode all variables must be declared with var. Even though the strict mode directive (use strict;) is only added to the function, the whole code breaks because that function does not adhere to the strict mode rules.</p>
+	<script>
+		function testFunction2(){
+		   // Restricts strict mode to this function only.
+		   "use strict";
+		   // This will throw.
+		   testvar = 4;
+		   return testvar;
+		}
+		var hello = testFunction2();
+	</script>
+	<p>The following code _does not_ cause a syntax error, even though the variable intvar variable is not declared with var, because the strict mode is scoped to the function only, while the non conformant code is found in a different scope (the global scope).</p>
+	<script>
+		function testFunction3(){
+		   // Restricts strict mode to this function only.
+		   "use strict";
+		   var testvar = 4;
+		   return testvar;
+		}
+
+		// This would have caused a syntax error to be thrown if there had been
+		// a "use strict"; directive at the top of the script (above the testFunction
+		// function). Since the directive is scoped to the function and not to the
+		// global scope (in which this code operates), this code runs normally.
+		intvar = 1;
+	</script>
+</body>
+</html>
