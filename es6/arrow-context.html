@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Functions</title>
+</head>
+<body>
+  How to use Arrow Functions in ES6
+  <script>
+    //Example 1: Upper and LowerCase
+    //standard JS
+    var upperStandard = function(arg) {
+      return arg.toUpperCase();
+    };
+
+    //ES6: arrow function
+    var
+      upperFunc = (arg) => arg.toUpperCase(),
+      lowerFunc = (arg) => arg.toLowerCase();
+
+    console.log(upperFunc('please uppercase me'));
+    console.log(lowerFunc('PLEASE LOWERCASE ME'));
+
+    //Example 2: Get User data from an object
+    //standard JS
+    var users = [
+      { name: 'Tu Nguyen', age: 28},
+      { name: 'Thanh Nguyen', age: 26},
+      { name: 'Dat Nguyen', age: 26}
+    ];
+
+
+    var
+      //standard
+      mapUser = users.map(function(user){
+        return user.age;
+      }),
+
+      //es6
+      mapUserAges = users.map(user => user.age);
+
+      //es6 summing ages
+      sumAges = mapUserAges.reduce((a,b) => a +b );
+
+    console.log(mapUser); //the same result
+    console.log(mapUserAges); //the same result
+    console.log(sumAges); //sum alll of ages
+
+    //Example 3: Filter values
+    var values = [1, 2, 3, 4, 5, 6];
+    var even = values.filter(x => x%2 ===0);
+    var evenSquares = even.map(x=> x*x);
+    console.log(even,evenSquares);
+
+  </script>
+</body>
+</html>
