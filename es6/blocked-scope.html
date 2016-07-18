@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blocked Scope</title>
+</head>
+<body>
+  <p>Blocked Scope</p>
+  <script>
+  function fnScoped() {
+    if(true) {
+      var demo = 'Active';
+    }
+    if(true) {
+      console.log('Name is ' + demo);
+    }
+  }
+
+  function blockScoped() {
+    if(true) {
+      let demo = 'Active';
+    }
+    //this will show error - because demo not defined
+    console.log('Name is' + demo);
+  }
+
+  fnScoped();
+  blockScoped();
+  </script>
+</body>
+</html>

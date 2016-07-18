@@ -7,14 +7,30 @@
 <body>
   How to use Destructuring in ES6
   <script>
+   //Ex1: get person object and show result
     //step 1: person object
     var person = {
         first: 'Marsellus',
         last: 'Wallace'
     };
     //step 2: assign variables to these properties
-    let {first, last} = person;
-console.log(first, last);
+    let {first: firstName, last: lastName} = person;
+    console.log(firstName, lastName);
+
+    //Ex2: show object
+    let person2 = {
+      first: 'Tu',
+      last: 'Nguyen',
+      spouse: {
+        first: 'Dieu',
+        last: 'Dong'
+      }
+    };
+
+    //show result
+    let{first: husband, last, spouse: {first: wife}} = person2;
+    console.log(wife,husband,last);
+
   </script>
 </body>
 </html>

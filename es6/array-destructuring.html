@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Destructuring</title>
+</head>
+<body>
+  How to use Destructuring in ES6
+  <script>
+    //ex1: normal
+    var [first,last] = ['Tu','Nguyen'];
+    console.log(first,last);
+
+    //ex2: swap
+    let a = 1, b = 2;
+    [b,a] = [a,b];
+    console.log({a,b});
+
+    //ex3: spread operator
+    let [firstL,...remaining] = [1,2,3,4,5];
+    console.log(firstL);
+    console.log(remaining);
+
+  </script>
+</body>
+</html>

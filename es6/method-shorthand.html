@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Method Shorthand</title>
+</head>
+<body>
+  <p>Method shorthand is a cleaner way to define methods on objects</p>
+  <script>
+    var chopper = {
+      owner: 'Tu', //var in object
+      getOwner: function() {  //function for returning
+        return this.owner;
+      }
+    };
+    console.log("Who's chopper is this?");
+    console.log("It's " + chopper.getOwner() + "'s'");
+  </script>
+</body>
+</html>

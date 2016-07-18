@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Default Parameters</title>
+</head>
+<body>
+  <p>Default Parameters</p>
+
+  <script>
+   function logDefault(a = 1, b = 2, c = 3) {
+     console.log({a,b,c});
+   }
+   logDefault();
+
+  function logDestructuredDefaults
+    ({a:A = 1, b:B, c:C = 3}) {
+      console.log({A,B,C});
+  };
+  logDestructuredDefaults({b: 2});
+
+  let {a=1, b=2, c=3} = {};
+  console.log({a, b, c});
+  
+  </script>
+</body>
+</html>

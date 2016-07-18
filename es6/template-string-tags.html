@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Template String (tags)</title>
+</head>
+<body>
+  <p>Template String (tags)</p>
+  <p>Tag a template string, strings and evaluated values<br />
+    get passed into a function of the same name.</p>
+  <script>
+    function uppercase(strings, ...values) {
+      let result = '';
+      for(let string of strings) {
+        result += string;
+        result += (values.shift()||'').toUpperCase();
+      }
+      return result;
+    }
+    let processed = uppercase`First: ${'abc'} Second: ${'def'}`;
+    console.log(processed);
+  </script>
+</body>
+</html>

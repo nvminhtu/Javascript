@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Classes</title>
+</head>
+<body>
+  <p>Classes</p>
+  <p>TClasses are now first-class concepts in JavaScript.</p>
+  <script>
+    class Person {
+      constructor(first,last) {
+        this.first = first;
+        this.last = last;
+      }
+      toString() {
+        return `${this.first} ${this.last}`;
+      }
+    }
+    let tu = new Person('Tu','Nguyen');
+    console.log(tu.toString());
+  </script>
+</body>
+</html>

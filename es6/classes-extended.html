@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Classes Extended</title>
+</head>
+<body>
+  <p>Classes Extended</p>
+  <p>TClasses are now first-class concepts in JavaScript.</p>
+  <script>
+    class Person {
+      constructor(first,last) {
+        this.first = first;
+        this.last = last;
+      }
+      toString() {
+        return `${this.first} ${this.last}`;
+      }
+    }
+
+    class Developer extends Person {
+      constructor(first, last, skill) {
+        super(first,last);
+        this.skill = skill;
+      }
+      toString() {
+        return `${super.toString()} with skills of ${this.skill}`;
+      }
+    }
+    let tu = new Developer('Tu','Nguyen','Javascript,HTML,CSS');
+    console.log(tu.toString());
+  </script>
+</body>
+</html>
