@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Functions</title>
+</head>
+<body>
+  <script>
+    //Refer from Babeljs.io
+    //ex1: Expression bodies
+    evens = ['2','4','3','7','8','10'];
+    var odds = evens.map(v=> v+1);
+    var nums = evens.map((v,i)=> v+i);
+    console.log(odds);
+    console.log(nums);
+
+    //Statement bodies
+    fives = [];
+    nums.forEach( v=> {
+      if(v%5 ===0 ) {
+         fives.push(v);
+      }
+    });
+    console.log(fives);
+
+    // Lexical this
+    var tu = {
+      _name: "Tu",
+      _friends: [],
+      printFriends() {
+        this._friends.forEach(f =>
+            console.log(this._name + "knows " + f));
+      }
+
+    }
+  </script>
+</body>
+</html>
