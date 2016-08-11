@@ -18,8 +18,9 @@
     
     $.each(quiz,function(index,item){
       var thisQuiz = $(this).attr('id'),
+          quest = $(this).find('.question').text(),
           thisChecks = "#"+ thisQuiz + " input[name='favorite']";
-  
+      
       if($(this).hasClass('active')){
         $(thisChecks).change(function () {
             var 
@@ -32,9 +33,10 @@
                 answers[$keyItem] = $(item).next().text();
               }
             });
+            console.log('asfasf');
             //store value
             var thisChecked = thisQuiz+'-data',
-                thisAnswer = {question: thisQuiz, answer: answers };
+                thisAnswer = {question: quest, answer: answers };
             localStorage.setItem(thisChecked,JSON.stringify(thisAnswer));
             console.log(localStorage.getItem(thisChecked));   
         });
@@ -79,6 +81,7 @@
       quiz.eq(currentEQ).removeClass('active');
       $('#final').addClass('active');
     } 
+    showResult();
   }
   
   /**
@@ -98,7 +101,9 @@
       quiz.eq(quiz.length-1).addClass('active');
       $('#final').removeClass('active');
       localStorage.setItem('step',quizID);
+      saveStorage(currentEQ);
     }
+    showResult();
   }
 
   /**
@@ -121,13 +126,16 @@
    
     //step 1: load current step at the first
     var stepData = localStorage.getItem('step');
-    if(stepData == null) {
+    
+
+    if(stepData === null || stepData === 'start') {
       localStorage.setItem('step','start');
     } else if(stepData == 'end') {
+      quiz.removeClass('active');
       $('#final').addClass('active');
     } else { //in playing quiz
-      var activeQuiz = $('#'+stepData);
       quiz.removeClass('active');
+      var activeQuiz = $('#'+stepData);
       activeQuiz.addClass('active');
     }
 
@@ -158,8 +166,9 @@
             answers[$keyItem] = $(item).next().text();
           }
         });
-        var ques = 'ques0'+ i,
-            null_data = {question: ques, answer: answers };
+        var ques = '#ques0'+ i,
+            quest = $(ques).find('.question').text();
+            null_data = {question: quest, answer: answers };
 
         localStorage.setItem(getQues,JSON.stringify(null_data));
       }
