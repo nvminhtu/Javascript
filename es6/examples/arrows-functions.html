@@ -9,10 +9,13 @@
     //Refer from Babeljs.io
     //ex1: Expression bodies
     evens = ['2','4','3','7','8','10'];
+    array_animals = ['dog','cat','cow','chicken'];
     var odds = evens.map(v=> v+1);
     var nums = evens.map((v,i)=> v+i);
-    console.log(odds);
+    console.log(odds.map(v=> v+1));
     console.log(nums);
+
+    console.log('Animal in odd list: ' + array_animals.map(v=>v));
 
     //Statement bodies
     fives = [];
