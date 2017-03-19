@@ -35,102 +35,70 @@ Thực ra đây là 1 dạng viết tắt của function (giống bên JAVA, C# 
 
 [Ví dụ về Arrow]
 
+### Class
+Hồi xưa javascript (ECMAScript 5) chưa hỗ trợ OOP, chúng ta phải mô tả các đối tượng thông qua function và prototype.
+Giờ ES6 đã hỗ trợ, viết OOP ngon nhé!!!
+[Ví dụ về Class]
 
+### Enhanced Object Literals
+### Exporting
+Export dùng để làm gì trong ES6?
+### Importing Modules
+### Template String, Multiline Strings, Escaping Characters
 
-#Section 1: Introduction
-* Lesson 1: Welcome to Building Mobile Apps with Ionic 2
-* Lesson 2: New Concepts
-* Lesson 3: Intro 2 & Angular 2 Syntax
+* Template String
 
-#Section 2: Ionic 2 Basics
-* Lesson 1: Generating an Ionic 2 Application
-* Lesson 2: Anatomy of an Ionic 2 Project
-* Lesson 3: Ionic CLI Commands
-* Lesson 4: Decorators Preview!
-* Lesson 5: Classes
-* Lesson 6: Templates
-* Lesson 7: Styling & Themeing
-* Lesson 8: Navigation
-* Lesson 9: User Input
-* Lesson 10: Saving Data
-* Lesson 11: Fetching Data, Observables & Promises
-* Lesson 12: Native Functionality
+```sh
+// Khởi tạo đơn giản 1 template string
+`In JavaScript '\n' is a line-feed.`
+```
 
-#Section 3: Quicklists
-* Lesson 1: Introduction
-* Lesson 2: Getting Ready
-* Lesson 3: Basic Layout
-* Lesson 4: Data Models & Observables Preview!
-* Lesson 5: Creating Checklists and Checklist Items
-* Lesson 6: Saving & Loading Checklists
-* Lesson 7: Creating an Introduction Slider & Themeing
-* Lesson 8: Conclusion
+```sh
+// Multiline string, trong Javascript cũ thì cái này không hợp lệ
+`In JavaScript this is
+ not legal.`
+```
 
-#Section 4: Giflist
-* Lesson 1: Introduction
-* Lesson 2: Getting Ready
-* Lesson 3: The List Page
-* Lesson 4: The Reddit API and HTML5 Video
-* Lesson 5: Settings and Saving Data
-* Lesson 6: Styling
-* Lesson 7: Conclusion
+```sh
+// Sử dụng string với biến bên trong
+var name = "Tu", time = "today";
+`Hello ${name}, how are you ${time}?`
+```
 
-#Section 5: Snapaday
-* Lesson 1: Introduction
-* Lesson 2: Getting Ready
-* Lesson 3: The Layout
-* Lesson 4: Taking Photos with the Camera
-* Lesson 4: Saving & Loading Photos
-* Lesson 5: Creating a Custom Pipe and Slideshow
-* Lesson 6: Integrating Local Notifications & Social Sharings
-* Lesson 7: Styling
-* Lesson 8: Conclusion
+* Escaping Character
+Khi sử dụng chúng ta ko cần quan tâm string chúng ta lẫn lộn dấu nháy đơn và nháy kép nữa
 
-#Section 6: Camper Mate
-* Lesson 1: Introduction
-* Lesson 2: Getting Ready
-* Lesson 3: Creating a Tabs Layout
-* Lesson 4: User Input & Forms
-* Lesson 5: Implementing Google Maps & Geolocation
-* Lesson 6: Saving and Retrieving Data
-* Lesson 7: Reusing Components
-* Lesson 8: Styling
-* Lesson 9: Conclusion
+```sh
+// ES5
+var text = "Ôi viết dấu \"double quotes\" trong ES5 vất vả quá"
 
-#Section 7: Camper Chat
-* Lesson 1: Introduction
-* Lesson 2: Getting Ready
-* Lesson 3: Login Page & Sliding Menu Layout
-* Lesson 4: Using Facebook for Authentication
-* Lesson 5: Creating Messages & Navigation
-* Lesson 6: Creating a Local and Remote Backend with PouchDB and Cloudant
-* Lesson 7: Styling & Animation
-* Lesson 8: Conclusion
+// ES6
+let text = `ahihi viết dấu "nháy đôi" không cần quan tâm cú pháp nữa.`
 
-#Section 8: Testing & Debugging
-* Lesson 1: Testing & Debugging
+```
 
-#Section 9: Building & Submitting
-* Lesson 1: Preparing Assets
-* Lesson 2: Signing iOS Applications on a Mac or PC
-* Lesson 3: Signing Android Applications on a Mac or PC
-* Lesson 4: Building for iOS & Android using Ionic Package (without a Mac)
-* Lesson 5: Submitting to the Apple App Store
-* Lesson 6: Submitting to Google Play
-* Lesson 7: Updating on the App Stores
+```sh
+// Multiline string,
+// ES5: viết dài dòng và code dễ bị sai
+var text = (
+  'plane\n' +
+  'train\n' +
+  'bus'
+)
+var text = [
+  'plane',
+  'train',
+  'bus'
+].join('\n')
 
-#Section 9: Congrats!
-* Lesson 1: Conclusion
-
-# Step by Step Learning
-
-### Official Tutorial
-
+// ES6
+var text = (
+  `plane
+  train
+  bus`
+)
+```
 ### Tips & Tricks
-
-
-### Tutorial
-
 
 ### Editors
 
