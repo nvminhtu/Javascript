@@ -116,6 +116,41 @@ var [a, ,b] = list; // a = 1, b = 3
 [ b , a] = [ b, a]; // b = 3, a = 1
 ```
 
+# Tham số mặc định
+Khi làm việc với tham số trong javascript, ta rất nhức đầu vì suy nghĩ và quản lý các tham số, ES6 hỗ trợ giải quyết các vấn đề này.
+
+```sh
+function default1 (x = 1, y = 2, z = 3) {
+  console.log(x, y, z);
+}
+default1(5, 6); // 5 6 3
+```
+
+```sh
+function default2 (x = 1, y = 5, z =6) {
+  console.log(x,y,z);
+}
+default2(undefined, 5, 4); // 1,5,4
+```
+
+# dấu '...' - sử dụng cho đa tham số.
+Trong quá trình làm việc thì ta phát hiện ra vài hàm có cách khai báo kiểu như functon(...args) - quái không biết nó dùng để làm gì nhỉ?
+=> nó có vai trò như một mảng động khi truyền vào tham số cho 1 function.
+Đừng lo, xem ví dụ dưới đây
+
+```sh
+function three_dot1 (...args) {
+  console.log(args.length); // in ra "4"
+  console.log(args);  // in ra "1 2 3 4"
+}
+three_dot1(1, 2, 3, 4);
+```
+### For...Off
+### Generators
+### Unicode
+### Map + Set + WeakMap + Weak Set
+
+... Keep be updated
 ### Tips & Tricks
 
 ### Editors
