@@ -98,6 +98,24 @@ var text = (
   bus`
 )
 ```
+
+# Destructing Assigment
+Một tính năng nữa cũng rất hay trong ES6, xem ví dụ sau nhé.
+
+```sh
+function multi_values(){
+  return [1,2,3,4,5,6];
+}
+// khi muốn gọi giá trị từ hàm trả về
+[x1, x2, , , x5, x6] = multi_values();
+console.log(x6);  // 6
+
+// trong ES6 ta làm như sau
+var list = [1,2,3];
+var [a, ,b] = list; // a = 1, b = 3
+[ b , a] = [ b, a]; // b = 3, a = 1
+```
+
 ### Tips & Tricks
 
 ### Editors
