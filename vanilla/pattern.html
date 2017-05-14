@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Understanding this
+    // Super Hero JS
+    // http://superherojs.com/#language
+
+    function hello(thing) {
+      console.log(this + " says hello " + thing);
+    }
+
+    hello.call("Yehuda", "world") //=> Yehuda says hello world
+
+  </script>
+</body>
+</html>
